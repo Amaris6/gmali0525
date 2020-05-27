@@ -1,6 +1,7 @@
 package com.xiangmu.gmli.gmliuser.service;
 
 import com.xiangmu.gmli.gmliuser.bean.UmsMember;
+import com.xiangmu.gmli.gmliuser.bean.UmsMemberReceiveAddress;
 
 import java.util.List;
 
@@ -13,4 +14,6 @@ import java.util.List;
 public interface UserService {
 
     List<UmsMember> getAllUser();
+
+    List<UmsMemberReceiveAddress> getReceiveAddressByMemberId(String memberId);
 }

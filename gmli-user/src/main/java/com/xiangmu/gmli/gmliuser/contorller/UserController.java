@@ -1,6 +1,7 @@
 package com.xiangmu.gmli.gmliuser.contorller;
 
 import com.xiangmu.gmli.gmliuser.bean.UmsMember;
+import com.xiangmu.gmli.gmliuser.bean.UmsMemberReceiveAddress;
 import com.xiangmu.gmli.gmliuser.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,12 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @RequestMapping("getReceiveAddressByMemberId")
+    @ResponseBody
+    public List<UmsMemberReceiveAddress> getReceiveAddressByMemberId(String memberId){
+        List<UmsMemberReceiveAddress> umsMemberReceiveAddress=userService.getReceiveAddressByMemberId(memberId);
+        return umsMemberReceiveAddress;
+    }
     @RequestMapping("getAllUser")
     @ResponseBody
     public List<UmsMember> getAllUser(){
